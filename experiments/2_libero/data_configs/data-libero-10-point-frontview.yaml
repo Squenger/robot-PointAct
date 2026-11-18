@@ -1,0 +1,18 @@
+mm_datasets:
+
+lerobot_datasets:
+
+  - repo_id: libero_10_no_noops
+    root: robot_data/libero/lerobot_point_lmdb
+    class_name: LeRobotPointCloudDataset
+    select_video_keys: [observation.images.front_image]
+    video_key_ids_for_vlm: [0]
+    select_state_keys: [observation.state]
+    select_action_keys: [action]
+    converted_rot_type: rot6d # euler, rot6d
+    is_delta_action: True
+    points_workspace: null # different for some tasks (already preprocessed) 
+    max_npoints: 4096
+    augment_pc_rot: 30
+    point_cloud_dirname: points_frontview
+    state_action_norm_file: robot_data/libero/lerobot_point_lmdb/libero_10_no_noops/robot_state_action_stats/rot6d.json
