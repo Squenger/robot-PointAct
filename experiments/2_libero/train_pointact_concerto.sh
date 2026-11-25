@@ -6,7 +6,7 @@ export HF_DATASETS_OFFLINE=1
 export PYTHONPATH=$(pwd):$PYTHONPATH
 
 GPUS=1
-PER_DEVICE_BATCH_SIZE=128
+PER_DEVICE_BATCH_SIZE=32
 
 # Build accelerate arguments based on GPU count
 if [ $GPUS -eq 1 ]; then
